@@ -10,9 +10,10 @@ return new class extends Migration
     {
         Schema::create('pembukuan', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal_transaksi');
             $table->integer('total_harga'); 
             $table->string('pesan'); 
-            $table->string('kategori');  
+            $table->enum('tipe', ['pemasukan', 'pengeluaran']);  
             $table->timestamps();
         });
     }

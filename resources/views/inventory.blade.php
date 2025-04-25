@@ -33,7 +33,8 @@
                 <td>{{ $item->harga_per_unit }}</td>
                 <td>{{ $item->jumlah }}</td>
                 <td>
-                    <a href="#">Edit</a> | <a href="#">Hapus</a>
+                    <a href="/edit-produk/{{ $item->id }}">Edit</a> |
+                    <a href="/hapus-produk/{{ $item->id }}" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</a>
                 </td>
             </tr>
             @endforeach
