@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1>Daftar Transaksi</h1>
+    <a href="/dashboard"><button>Kembali</button></a>
     <a href="/tambah-transaksi"><button>Tambah Transaksi</button></a>
     <br><br>
 

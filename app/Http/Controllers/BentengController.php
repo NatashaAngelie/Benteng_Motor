@@ -38,10 +38,15 @@ class BentengController extends Controller
 
         if ($akun && Hash::check($request->password, $akun->password)) {
             Session::put('email', $akun->email);
-            return redirect('/inventory');
+            return redirect('/dashboard');
         }
 
         return back()->with('error', 'Login gagal!');
+    }
+
+    public function dashboard() {
+        if (!Session::has('email')) return redirect('/');
+        return view('dashboard');
     }
 
     public function inventory() {

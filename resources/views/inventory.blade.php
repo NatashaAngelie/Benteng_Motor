@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1>Inventory</h1>
+    <a href="/dashboard"><button>Kembali</button></a>
     <a href="/tambah-produk"><button>Tambah Produk</button></a>
     <h2>Daftar Produk</h2>
 
