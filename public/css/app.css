@@ -1,0 +1,149 @@
+.login_regis{
+    background: linear-gradient(to bottom, #003366, #ff791f) no-repeat;
+    height: 488px;
+    overflow: hidden;
+}
+
+img{
+    width: 380px;
+    height: auto;
+    position: absolute;       /* penting buat animasi bebas */
+    top: 0; /* Posisi atas */
+    left: 50%; /* Tengah horizontal */
+    transform: translateX(-50%); /* Tengah horizontal */
+    cursor: pointer;
+    z-index: 10;
+}
+
+.login_regis .form_login_regis{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    margin: 150px 200px;
+    padding: 5px 20px;
+}
+
+.login_regis h2{
+    color: #003366;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.login_regis input{
+    width: 95.5%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 0 18px;
+    border-color: #ff791f;
+}
+
+.login_regis input:focus{
+    background: linear-gradient(to bottom, #e6f3ff, #3399FF);
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.login_regis input::placeholder{
+    font-size: 1.15em;
+}
+
+.login_regis button{
+    width: 100px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: #3399FF;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.login_regis button:hover{
+    background-color: #ff791f;
+    color: black;
+    border-color: white;
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.login_regis p{
+    text-align: center;
+}
+
+.login_regis a{
+    color: #003366;
+    font-weight: bold;
+}
+
+/* .loading-container {
+    width: 100%;
+    height: 10px;
+    background-color: #f3f3f3;
+    display: none;
+    margin-top: 20px;
+} */
+
+/* .loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #3498db;
+    transition: width 0.1s;
+} */
+
+/* .hidden {
+    display: none;
+} */
+
+.dashboard{
+    background-image: url("/picture/bg.png");
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+}
+
+.dashboard img{
+    top: 78%;
+}
+
+.dashboard h1{
+    text-align: center;
+    font-size: 3em;
+}
+
+.dashboard div{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.dashboard div button{
+    width: 200px;
+    height: 120px;
+}
+
+.dashboard .logout{
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+    background-color: #e6f3ff;
+}
+
+.dashboard .logout:hover{
+    background-color: #ff0000;
+    color: black;
+    border-color: white;
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.dashboard a{
+    text-decoration: none;
+}

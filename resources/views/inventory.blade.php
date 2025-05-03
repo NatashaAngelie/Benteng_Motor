@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Inventory</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         table, th, td {
             border: 1px solid black;

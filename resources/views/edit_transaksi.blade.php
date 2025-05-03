@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Edit Transaksi</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <h1>Edit Transaksi</h1>

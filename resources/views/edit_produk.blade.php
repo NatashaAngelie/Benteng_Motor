@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Edit Produk</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <h1>Edit Produk</h1>

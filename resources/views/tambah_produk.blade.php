@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Tambah Produk</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <h1>Tambah Produk Baru</h1>
