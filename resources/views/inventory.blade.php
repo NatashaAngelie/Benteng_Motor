@@ -11,10 +11,12 @@
         }
     </style>
 </head>
-<body>
-    <h1>Inventory</h1>
-    <a href="/dashboard"><button>Kembali</button></a>
-    <a href="/tambah-produk"><button>Tambah Produk</button></a>
+<body class="inventory">
+    <div>
+        <a href="/dashboard">< Kembali</a>
+        <h1>Inventory</h1>
+    </div>
+    <a href="/tambah-produk" style="text-decoration: none;"><button class="tambah">Tambah Produk</button></a>
     <h2>Daftar Produk</h2>
 
     <table>
@@ -35,8 +37,8 @@
                 <td>{{ $item->harga_per_unit }}</td>
                 <td>{{ $item->jumlah }}</td>
                 <td>
-                    <a href="/edit-produk/{{ $item->id }}">Edit</a> |
-                    <a href="/hapus-produk/{{ $item->id }}" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</a>
+                    <a href="/edit-produk/{{ $item->id }}"><button class="edit">Edit</button></a> |
+                    <a href="/hapus-produk/{{ $item->id }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')"><button class="hapus">Hapus</button></a>
                 </td>
             </tr>
             @endforeach

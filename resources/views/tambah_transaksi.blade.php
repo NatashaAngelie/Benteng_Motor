@@ -4,9 +4,11 @@
     <title>Tambah Transaksi</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
-    <h1>Tambah Transaksi</h1>
-    <a href="/transaksi"><button>Kembali</button></a>
+<body class="transaksi">
+    <div style="gap: 430px">
+        <a href="/transaksi">< Kembali</a>
+        <h1>Tambah Transaksi</h1>
+    </div>
 
     <form action="/simpan-transaksi" method="POST">
         @csrf

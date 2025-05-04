@@ -10,7 +10,7 @@
             const motor = document.getElementById('motor');
             let screenWidth = window.innerWidth;
             let x = screenWidth / 2;
-            let speed = 7;
+            let speed = 5;
             let isRunning = false;
             let phase = 'initial'; // fase pergerakan: 'initial', 'toRight', 'fromLeft', 'stop'
 
@@ -54,7 +54,7 @@
         <div class="form_login_regis">
             <h2>Login</h2>
             @if(session('error')) <p>{{ session('error') }}</p> @endif
-            <form action="/login" method="POST">
+            <form action="/login" method="POST" id="loginFormAction">
                 @csrf
                 <input type="text" name="email" placeholder="Email" required><br>
                 <input type="password" name="password" placeholder="Password" required><br>
@@ -63,7 +63,8 @@
             <p>Belum punya akun? <a href="/register">Register</a></p>
         </div>
 
-        <!-- <div class="loading-container" id="loadingContainer">
+        <div class="loading-container" id="loadingContainer" style="display: none;">
+        <h1>Loading...</h1>
         <div class="loading-bar" id="loadingBar"></div>
         </div>
         <script>
@@ -77,11 +78,12 @@
                 // Tampilkan loading bar dan sembunyikan form
                 loadingContainer.style.display = 'block';
                 document.querySelector('.form_login_regis').style.display = 'none';
+                document.querySelector('img').style.display = 'none'
                 
                 // Mulai mengisi loading bar
                 let progress = 0;
                 let interval = setInterval(function() {
-                    progress += 5;  // Tambah progress setiap interval
+                    progress += 2;  // Tambah progress setiap interval
                     loadingBar.style.width = progress + '%';
 
                     if (progress >= 100) {
@@ -90,9 +92,9 @@
                         setTimeout(function() {
                             // Submit form setelah loading bar selesai
                             loginForm.submit();  // Form akhirnya disubmit
-                        }, 500);  // Waktu tunggu setelah loading selesai
+                        }, 100);  // Waktu tunggu setelah loading selesai
                     }
                 }, 100);  // Setiap 100ms progress bar bertambah 5%
             });
-        </script> -->
+        </script>
     </body>

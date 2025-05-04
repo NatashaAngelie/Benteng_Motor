@@ -1,6 +1,6 @@
 .login_regis{
     background: linear-gradient(to bottom, #003366, #ff791f) no-repeat;
-    height: 488px;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -78,30 +78,42 @@ img{
     font-weight: bold;
 }
 
-/* .loading-container {
+.loading-container{
     width: 100%;
     height: 10px;
-    background-color: #f3f3f3;
     display: none;
-    margin-top: 20px;
-} */
+    position: fixed;
+    margin-top: 180px;
+}
 
-/* .loading-bar {
-    height: 100%;
-    width: 0%;
+.loading-container h1{
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.loading-bar{
+    height: 30px;
+    width: 0;
+    max-width: 1000px;
+    margin-left: 170px;
+    border-radius: 20px;
+    border: 3px solid white;
     background-color: #3498db;
-    transition: width 0.1s;
-} */
+    transition: width 1s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
 
-/* .hidden {
+.hidden {
     display: none;
-} */
+}
 
 .dashboard{
-    background-image: url("/picture/bg.png");
-    background-size: cover;
-    color: white;
+    background: linear-gradient(to bottom, #003366, #ff791f) no-repeat;
+    height: 100vh;
     overflow: hidden;
+    color: white;
 }
 
 .dashboard img{
@@ -122,9 +134,64 @@ img{
 }
 
 .dashboard div button{
-    width: 200px;
-    height: 120px;
+    width: 400px;
+    height: 220px;
+    border-radius: 20px;
+    border: none;
+    font-size: 2.4em;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    padding-left: 30px;
 }
+
+.dashboard .dashboard_inventory{
+    background-color: #3399FF;
+}
+
+.dashboard .dashboard_transaksi{
+    background-color: #ffb81f;
+}
+
+.dashboard .dashboard_inventory span, .dashboard .dashboard_transaksi span{
+    position: relative;
+    top: -100px;
+}
+
+.dashboard .dashboard_inventory svg{
+    width: 150px;
+    height: auto;
+    margin-left: 30px;
+    fill: #e6f3ff85;
+}
+
+.dashboard .dashboard_transaksi svg{
+    width: auto;
+    height: 150px;
+    margin-left: 30px;
+    fill: #ff791f7e;
+    margin-left: 70px;
+}
+
+/* Ripple styles
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+}
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+} */
 
 .dashboard .logout{
     display: block;
@@ -133,7 +200,8 @@ img{
     height: 30px;
     border-color: white;
     border-radius: 20px;
-    background-color: #e6f3ff;
+    background-color: #ff0000;
+    color: white;
 }
 
 .dashboard .logout:hover{
@@ -146,4 +214,261 @@ img{
 
 .dashboard a{
     text-decoration: none;
+}
+
+.inventory{
+    background: url("/picture/inventory.png") rgba(0, 0, 0, 0.15); 
+    background-blend-mode: darken;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+}
+
+.inventory div{
+    display: flex;
+    align-items: center;
+    gap: 500px;
+}
+
+.inventory div a{
+    margin-top: -30px;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.inventory h1{
+    text-align: center;
+    font-size: 2.75em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.inventory h2{
+    text-align: center;
+    font-size: 2.1em;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.inventory .tambah{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+    background-color: #e6f3ff;
+}
+
+.inventory .tambah:hover{
+    background-color: #003366;
+    color: white;
+    border-color: white;
+    transform: translateY(-3px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.inventory table{
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.inventory table, .inventory table td, .inventory table th{
+    border: 3px solid #003366;
+    font-size: 20px;
+}
+
+.inventory table th{
+    background-color: #003366;
+}
+
+.inventory table td{
+    text-align: center;
+    background-color: #e6f3ff;
+    color: black;
+}
+
+.inventory .edit, .inventory .hapus{
+    width: 70px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+}
+
+.inventory .edit{
+    background-color: #ffe91f;
+}
+
+.inventory .hapus{
+    background-color: #ff0000;
+    color: white;
+}
+
+.inventory .edit:hover, .inventory .hapus:hover{
+    transform: translateY(-3px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.inventory form{
+    background-color: #0033666b;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 250px;
+    font-size: 17px;
+}
+
+.inventory input{
+    width: 98%;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.inventory form button{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+    background-color: #e6f3ff;
+}
+
+.inventory form button:hover{
+    background-color: #003366;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.transaksi{
+    background: url("/picture/transaksi.jpg"); 
+    background-size: cover;
+    overflow: hidden;
+    color: black;
+}
+
+.transaksi div{
+    display: flex;
+    align-items: center;
+    gap: 492px;
+}
+
+.transaksi div a{
+    margin-top: -30px;
+    color: black;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.transaksi h1{
+    text-align: center;
+    font-size: 2.75em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.transaksi h2{
+    text-align: center;
+    font-size: 2.1em;
+    margin-top: 50px;
+    margin-bottom: -15px;
+}
+
+.transaksi .tambah{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+    background-color: #ffb81f;
+}
+
+.transaksi .tambah:hover{
+    background-color: #ff791f;
+    color: white;
+    border-color: white;
+    transform: translateY(-3px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.transaksi table{
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.transaksi table, .transaksi table td, .transaksi table th{
+    border: 3px solid #ff791f;
+    font-size: 20px;
+}
+
+.transaksi table th{
+    background-color: #ff791f;
+}
+
+.transaksi table td{
+    text-align: center;
+    background-color: #ffb81f;
+    color: black;
+}
+
+.transaksi .edit, .transaksi .hapus{
+    width: 70px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+}
+
+.transaksi .edit{
+    background-color: #ffe91f;
+}
+
+.transaksi .hapus{
+    background-color: #ff0000;
+    color: white;
+}
+
+.transaksi .edit:hover, .transaksi .hapus:hover{
+    transform: translateY(-3px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
+}
+
+.transaksi form{
+    background-color: #ff791f6b;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 250px;
+    font-size: 17px;
+}
+
+.transaksi input{
+    width: 98%;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.transaksi form button{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
+    border-color: white;
+    border-radius: 20px;
+    background-color: #ffb81f;
+}
+
+.transaksi form button:hover{
+    background-color: #ff791f;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
 }

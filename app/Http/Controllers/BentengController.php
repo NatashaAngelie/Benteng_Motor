@@ -107,7 +107,9 @@ class BentengController extends Controller
 
     public function transaksi() {
         $data = Transaksi::all();
-        return view('transaksi', compact('data'));
+        $totalPemasukan = Transaksi::where('tipe', 'pemasukan')->sum('total_harga');
+        $totalPengeluaran = Transaksi::where('tipe', 'pengeluaran')->sum('total_harga');
+        return view('transaksi', compact('data', 'totalPemasukan', 'totalPengeluaran'));
     }
 
     public function tambahTransaksi() {

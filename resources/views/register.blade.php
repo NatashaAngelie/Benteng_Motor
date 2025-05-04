@@ -10,7 +10,7 @@
             const motor = document.getElementById('motor');
             let screenWidth = window.innerWidth;
             let x = screenWidth / 2;
-            let speed = 7;
+            let speed = 5;
             let isRunning = false;
             let phase = 'initial'; // fase pergerakan: 'initial', 'toRight', 'fromLeft', 'stop'
 

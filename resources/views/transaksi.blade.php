@@ -11,10 +11,13 @@
         }
     </style>
 </head>
-<body>
-    <h1>Daftar Transaksi</h1>
-    <a href="/dashboard"><button>Kembali</button></a>
-    <a href="/tambah-transaksi"><button>Tambah Transaksi</button></a>
+<body class="transaksi">
+    <div>
+        <a href="/dashboard">< Kembali</a>
+        <h1>Transaksi</h1>
+    </div>
+    <a href="/tambah-transaksi" style="text-decoration: none;"><button class="tambah">Tambah Transaksi</button></a>
+    <h2>Daftar Transaksi</h2>
     <br><br>
 
     <table>
@@ -37,12 +40,24 @@
                 <td>{{ $item->pesan }}</td>
                 <td>{{ $item->tipe }}</td>
                 <td>
-                    <a href="/edit-transaksi/{{ $item->id }}">Edit</a> |
-                    <a href="/hapus-transaksi/{{ $item->id }}" onclick="return confirm('Yakin hapus?')">Hapus</a>
+                    <a href="/edit-transaksi/{{ $item->id }}"><button class="edit">Edit</button></a> |
+                    <a href="/hapus-transaksi/{{ $item->id }}" onclick="return confirm('Yakin hapus?')"><button class="hapus">Hapus</button></a>
                 </td>
             </tr>
             @endforeach
         </tbody>
+    </table>
+
+    <h2 style="margin-bottom: 25px;">Ringkasan Transaksi</h2>
+    <table>
+        <tr>
+            <td><strong>Total Pemasukan</strong></td>
+            <td>Rp {{ number_format($totalPemasukan, 0, ',', '.') }}</td>
+        </tr>
+        <tr>
+            <td><strong>Total Pengeluaran</strong></td>
+            <td>Rp {{ number_format($totalPengeluaran, 0, ',', '.') }}</td>
+        </tr>
     </table>
 </body>
 </html>

@@ -4,9 +4,11 @@
     <title>Edit Produk</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
-    <h1>Edit Produk</h1>
-    <a href="/inventory"><button>Kembali</button></a>
+<body class="inventory">
+    <div style="gap: 475px;">
+        <a href="/inventory">< Kembali</a>
+        <h1>Edit Produk</h1>
+    </div>
     <form action="/update-produk/{{ $produk->id }}" method="POST">
         @csrf
         <label>Nama Produk:</label><br>
