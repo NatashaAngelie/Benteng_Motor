@@ -41,7 +41,7 @@
                 <td>{{ $item->tipe }}</td>
                 <td>
                     <a href="/edit-transaksi/{{ $item->id }}"><button class="edit">Edit</button></a> |
-                    <a href="/hapus-transaksi/{{ $item->id }}" onclick="return confirm('Yakin hapus?')"><button class="hapus">Hapus</button></a>
+                    <a href="/hapus-transaksi/{{ $item->id }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')"><button class="hapus">Hapus</button></a>
                 </td>
             </tr>
             @endforeach

@@ -173,25 +173,10 @@ img{
     margin-left: 70px;
 }
 
-/* Ripple styles
-.ripple-btn {
-    position: relative;
-    overflow: hidden;
+.dashboard .dashboard_inventory:hover, .dashboard .dashboard_transaksi:hover{
+    transform: translateY(-2px); /* naik sedikit saat hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
 }
-.ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple-animation 600ms linear;
-    background-color: rgba(255, 255, 255, 0.7);
-    pointer-events: none;
-}
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-} */
 
 .dashboard .logout{
     display: block;
@@ -345,10 +330,22 @@ img{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bayangan lembut saat hover */
 }
 
+.save-btn {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.save-btn.loading {
+    background-color: #6c757d;
+    color: black;
+}
+.save-btn.success {
+    background-color: #38c172;
+    color: white;
+}
+
 .transaksi{
     background: url("/picture/transaksi.jpg"); 
     background-size: cover;
-    overflow: hidden;
     color: black;
 }
 

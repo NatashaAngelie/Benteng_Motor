@@ -10,7 +10,7 @@
         <h1>Edit Transaksi</h1>
     </div>
 
-    <form action="/update-transaksi/{{ $transaksi->id }}" method="POST">
+    <form id="formTransaksi" action="/update-transaksi/{{ $transaksi->id }}" method="POST">
         @csrf
         <label>Tanggal Transaksi:</label><br>
         <input type="date" name="tanggal_transaksi" value="{{ $transaksi->tanggal_transaksi }}"><br><br>
@@ -27,7 +27,51 @@
             <option value="pengeluaran" {{ $transaksi->tipe == 'pengeluaran' ? 'selected' : '' }}>Pengeluaran</option>
         </select><br><br>
 
-        <button type="submit">Update</button>
+        <button type="submit" class="save-btn" id="btnSimpan">Update</button>
     </form>
+
+    <script>
+        const form = document.getElementById('formTransaksi');
+        const btn = document.getElementById('btnSimpan');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Hindari submit langsung
+
+            btn.textContent = 'Menyimpan...';
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            // Kirim data form lewat fetch API
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams(new FormData(form))
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.classList.remove('loading');
+                    btn.classList.add('success');
+                    btn.textContent = '✓ Tersimpan';
+
+                    setTimeout(() => {
+                        window.location.href = "/transaksi";
+                    }, 1500);
+                } else {
+                    throw new Error('Gagal menyimpan');
+                }
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = 'Simpan';
+                alert("Gagal menyimpan data.");
+                console.error(err);
+            });
+        });
+    </script>
 </body>
 </html>
