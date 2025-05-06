@@ -67,7 +67,7 @@
                 btn.disabled = false;
                 btn.classList.remove('loading');
                 btn.textContent = 'Simpan';
-                alert("Gagal menyimpan data.");
+                alert("Mohon isi semua data terlebih dahulu");
                 console.error(err);
             });
         });

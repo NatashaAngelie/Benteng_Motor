@@ -13,13 +13,13 @@
     <form id="formTransaksi" action="/update-transaksi/{{ $transaksi->id }}" method="POST">
         @csrf
         <label>Tanggal Transaksi:</label><br>
-        <input type="date" name="tanggal_transaksi" value="{{ $transaksi->tanggal_transaksi }}"><br><br>
+        <input type="date" name="tanggal_transaksi" value="{{ $transaksi->tanggal_transaksi }}" require><br><br>
 
         <label>Total Harga:</label><br>
-        <input type="number" name="total_harga" value="{{ $transaksi->total_harga }}"><br><br>
+        <input type="number" name="total_harga" value="{{ $transaksi->total_harga }}" require><br><br>
 
         <label>Pesan:</label><br>
-        <input type="text" name="pesan" value="{{ $transaksi->pesan }}"><br><br>
+        <input type="text" name="pesan" value="{{ $transaksi->pesan }}" require><br><br>
 
         <label>Tipe:</label><br>
         <select name="tipe">
@@ -68,7 +68,7 @@
                 btn.disabled = false;
                 btn.classList.remove('loading');
                 btn.textContent = 'Simpan';
-                alert("Gagal menyimpan data.");
+                alert("Tidak boleh ada data yang kosong");
                 console.error(err);
             });
         });

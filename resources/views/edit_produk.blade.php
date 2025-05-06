@@ -12,13 +12,13 @@
     <form id="formProduk" action="/update-produk/{{ $produk->id }}" method="POST">
         @csrf
         <label>Nama Produk:</label><br>
-        <input type="text" name="nama_produk" value="{{ $produk->nama_produk }}"><br><br>
+        <input type="text" name="nama_produk" value="{{ $produk->nama_produk }}" require><br><br>
 
         <label>Harga per Unit:</label><br>
-        <input type="number" name="harga_per_unit" value="{{ $produk->harga_per_unit }}"><br><br>
+        <input type="number" name="harga_per_unit" value="{{ $produk->harga_per_unit }}" require><br><br>
 
         <label>Jumlah Stok:</label><br>
-        <input type="number" name="jumlah" value="{{ $produk->jumlah }}"><br><br>
+        <input type="number" name="jumlah" value="{{ $produk->jumlah }}" require><br><br>
 
         <button type="submit" class="save-btn" id="btnSimpan">Update</button>
     </form>
@@ -61,7 +61,7 @@
                 btn.disabled = false;
                 btn.classList.remove('loading');
                 btn.textContent = 'Simpan';
-                alert("Gagal menyimpan data.");
+                alert("Tidak boleh ada data yang kosong");
                 console.error(err);
             });
         });

@@ -106,19 +106,40 @@ class BentengController extends Controller
     }
 
     public function transaksi() {
+        if (!Session::has('email')) return redirect('/');
+    
         $data = Transaksi::all();
         $totalPemasukan = Transaksi::where('tipe', 'pemasukan')->sum('total_harga');
         $totalPengeluaran = Transaksi::where('tipe', 'pengeluaran')->sum('total_harga');
+    
         return view('transaksi', compact('data', 'totalPemasukan', 'totalPengeluaran'));
     }
-
+    
     public function tambahTransaksi() {
+        if (!Session::has('email')) return redirect('/');
+        
         return view('tambah_transaksi');
     }
 
     public function simpanTransaksi(Request $request) {
-        Transaksi::create($request->all());
-        return redirect('/transaksi')->with('success', 'Transaksi ditambahkan');
+        // Validasi input
+        $request->validate([
+            'tanggal_transaksi' => 'required|date',
+            'total_harga' => 'required|numeric',
+            'pesan' => 'required|string',
+            'tipe' => 'required|in:pemasukan,pengeluaran'
+        ]);
+    
+        // Simpan data
+        Transaksi::create([
+            'tanggal_transaksi' => $request->tanggal_transaksi,
+            'total_harga' => $request->total_harga,
+            'pesan' => $request->pesan,
+            'tipe' => $request->tipe,
+        ]);
+    
+        // Redirect dengan pesan sukses
+        return redirect('/transaksi')->with('success', 'Transaksi berhasil ditambahkan!');
     }
 
     public function editTransaksi($id) {

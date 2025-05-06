@@ -13,13 +13,13 @@
     <form id="formProduk" action="/simpan-produk" method="POST">
         @csrf
         <label>Nama Produk:</label><br>
-        <input type="text" name="nama_produk"><br><br>
+        <input type="text" name="nama_produk" require><br><br>
 
         <label>Harga per Unit:</label><br>
-        <input type="number" name="harga_per_unit"><br><br>
+        <input type="number" name="harga_per_unit" require><br><br>
 
         <label>Jumlah Stok:</label><br>
-        <input type="number" name="jumlah"><br><br>
+        <input type="number" name="jumlah" require><br><br>
 
         <button type="submit" class="save-btn" id="btnSimpan">Simpan</button>
     </form>
@@ -62,7 +62,7 @@
                 btn.disabled = false;
                 btn.classList.remove('loading');
                 btn.textContent = 'Simpan';
-                alert("Gagal menyimpan data.");
+                alert("Mohon isi semua data terlebih dahulu");
                 console.error(err);
             });
         });
